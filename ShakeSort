@@ -1,0 +1,39 @@
+package main
+
+import "fmt"
+
+func main() {
+	x := []int{5, 6, 2, 1, 6}
+	
+	fmt.Println(x)
+	time := 0
+	
+		left := 0
+		right := len(x) - 1
+		i := 0
+		
+		for left <= right {
+			for i = right; i> left; i-- {
+				if (x[i-1] > x[i]) {
+					time = x[i-1]
+					x[i-1] = x[i]
+					x[i] = time
+					}
+				}
+			left ++
+			
+			for i = left; i<right; i++ {
+				if (x[i] > x[i+1]) {
+					time = x[i+1]
+					x[i+1] = x[i]
+					x[i] = time
+				}
+			}
+			
+			right --
+		}
+	fmt.Println(x)
+					
+	
+		
+}
