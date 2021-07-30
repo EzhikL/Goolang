@@ -1,0 +1,25 @@
+package main
+
+import "fmt" 
+
+func main() {
+	
+	
+	x := []int{1, 56, 78, 8, 34, 8, 34, 56, 32}
+	
+	fmt.Println(x)
+	
+	for i:=1; i<len(x); i++ {
+		time := x[i]
+		j := i
+		for j>0 && x[j-1] > time {
+			x[j] = x[j-1]
+			j--
+		}
+		
+		x[j] = time
+	}
+	
+	fmt.Println(x)
+
+}
